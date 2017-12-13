@@ -11,7 +11,7 @@ import { AngularFirestoreModule } from 'angularfire2/firestore';
 import { environment } from '../environments/environment';
 
 //Material design
-import { MatTableModule, MatInputModule, MatButtonModule} from '@angular/material';
+import { MatTableModule, MatInputModule, MatButtonModule, MatSortModule, MatSort} from '@angular/material';
 
 import { StudentService } from './student.service';
 
@@ -26,11 +26,13 @@ import { StudentService } from './student.service';
     MatTableModule,
     MatInputModule,
     FormsModule,
+    MatSortModule,
     AngularFireModule.initializeApp(environment.firebase),
     AngularFirestoreModule.enablePersistence()
   ],
   providers: [
-    StudentService
+    StudentService,
+    MatSort
   ],
   bootstrap: [AppComponent]
 })

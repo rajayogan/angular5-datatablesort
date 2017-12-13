@@ -12,7 +12,7 @@
 <button mat-raised-button (click)="addStudent()" color="primary">Add</button>
 </div>
 <div class="example-container mat-elevation-z8">
-  <mat-table #table [dataSource]="dataSource">
+  <mat-table #table [dataSource]="dataSource" matSort>
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -21,19 +21,19 @@
     <!-- Name Column -->
     
     <ng-container matColumnDef="Name">
-      <mat-header-cell *matHeaderCellDef> Name </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.studentName}} </mat-cell>
     </ng-container>
 
     <!-- Age Column -->
     <ng-container matColumnDef="Age">
-      <mat-header-cell *matHeaderCellDef> Age </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Age </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.studentAge}} </mat-cell>
     </ng-container>
 
     <!-- Grade Column -->
     <ng-container matColumnDef="Grade">
-      <mat-header-cell *matHeaderCellDef> Grade </mat-header-cell>
+      <mat-header-cell *matHeaderCellDef mat-sort-header> Grade </mat-header-cell>
       <mat-cell *matCellDef="let element"> {{element.studentGrade}} </mat-cell>
     </ng-container>
 

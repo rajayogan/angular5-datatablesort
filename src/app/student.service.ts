@@ -13,6 +13,6 @@ export class StudentService {
   }
 
   getStudents() {
-    return this.afs.collection('students', ref => ref.orderBy('studentAge')).valueChanges();
+    return this.afs.collection('students').valueChanges();
   }
 }
